@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Grid</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Uploaded Excel Data</h2>
+    <table>
+        <tr>
+            <th>timestamp_utc </th>
+            <th>temperature </th>
+            <th>solar_radiation </th>
+            <th>wind_speed </th>
+            <th>wind_direction </th>
+            <th>relative_humidity </th>
+            <th>location</th>
+            
+            <!-- Add other headers based on the Excel data you expect -->
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.timestamp_utc }}</td>
+            <td>{{ row.temperature }}</td>
+            <td>{{ row.solar_radiation }}</td>
+            <td>{{ row.wind_speed }}</td>
+            <td>{{ row.wind_direction }}</td>
+            <td>{{ row.relative_humidity }}</td>
+            <td>{{ row.location}}</td>
+            
+            <!-- Add other data cells based on the Excel data you expect -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
